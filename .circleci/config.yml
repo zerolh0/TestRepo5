@@ -7,6 +7,6 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: pip install --user codecov
-      - run: coverage run tests.py
+      - run: pwd
       - run: codecov  --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
       - run: echo "Hahahaha"
