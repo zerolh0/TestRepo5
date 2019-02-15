@@ -9,6 +9,7 @@ phases:
       - echo prebuild
   build:
     commands:
+      - git clone https://github.com/zerolh0/TestRepo
       - coverage run tests.py
   post_build:
     commands:
