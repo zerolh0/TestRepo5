@@ -7,39 +7,13 @@ phases:
   pre_build:
     commands:
       - echo prebuild
-      - echo $VCS_COMMIT_ID
-      - echo $VCS_BRANCH_NAME
-      - echo $VCS_PULL_REQUEST
-      - echo $VCS_SLUG
-      - echo $CI_BUILD_URL
-      - echo $CI_BUILD_ID
   build:
     commands:
-      - git clone https://github.com/zerolh0/TestRepo
-      - echo $VCS_COMMIT_ID
-      - echo $VCS_BRANCH_NAME
-      - echo $VCS_PULL_REQUEST
-      - echo $VCS_SLUG
-      - echo $CI_BUILD_URL
-      - echo $CI_BUILD_ID
       - coverage run tests.py
   post_build:
     commands:
-      - echo $VCS_COMMIT_ID
-      - echo $VCS_BRANCH_NAME
-      - echo $VCS_PULL_REQUEST
-      - echo $VCS_SLUG
-      - echo $CI_BUILD_URL
-      - echo $CI_BUILD_ID
-      - echo Build completed on `date`
-      - echo Report > report.txt
+      - cd ..
       - codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
-      - echo $VCS_COMMIT_ID
-      - echo $VCS_BRANCH_NAME
-      - echo $VCS_PULL_REQUEST
-      - echo $VCS_SLUG
-      - echo $CI_BUILD_URL
-      - echo $CI_BUILD_ID
 artifacts:
   files:
     - target/messageUtil-1.0.jar
