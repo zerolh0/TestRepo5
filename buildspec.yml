@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - pip install codecov
+  pre_build:
+    commands:
+      - echo prebuild
+  build:
+    commands:
+      - coverage run tests.py
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Report > report.txt
+      - codecov --token=f7029fd8-0f04-41c6-8f9a-897de83267f4
+artifacts:
+  files:
+    - target/messageUtil-1.0.jar
+  name: test-${AWS_REGION}
