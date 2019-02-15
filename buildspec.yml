@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Report > report.txt
-      - codecov
+      - codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
 artifacts:
   files:
     - target/messageUtil-1.0.jar
