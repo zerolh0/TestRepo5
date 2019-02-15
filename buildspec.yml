@@ -13,7 +13,7 @@ phases:
       - coverage run tests.py
   post_build:
     commands:
-      - sleep 600
+      - printenv
       - echo Build completed on `date`
       - echo Report > report.txt
       - codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
