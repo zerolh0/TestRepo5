@@ -10,9 +10,11 @@ phases:
   build:
     commands:
       - coverage run tests.py
+      -cat coverage.xml
   post_build:
     commands:
       - codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
+      - cat coverage.xml
 artifacts:
   files:
     - target/messageUtil-1.0.jar
