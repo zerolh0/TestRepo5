@@ -13,8 +13,9 @@ phases:
       - cat coverage.xml
   post_build:
     commands:
-      - codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
-      - cat coverage.xml
+      #- codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
+      #- cat coverage.xml
+      - bash <(curl -s https://codecov.io/bash) -t 646448aa-c2cb-43f5-8214-da5d0ef8118f
 artifacts:
   files:
     - target/messageUtil-1.0.jar
