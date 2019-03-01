@@ -6,5 +6,12 @@ install:
 script:
   - coverage run tests.py
 after_success:
-  #- codecov
+  - echo "${TRAVIS_PULL_REQUEST_SHA:-$TRAVIS_COMMIT}"
+  - echo "$TRAVIS_JOB_NUMBER"
+  - echo "$TRAVIS_PULL_REQUEST"
+  - echo "$TRAVIS_JOB_ID"
+  - echo "$TRAVIS_REPO_SLUG"
+  - echo "$env,TRAVIS_OS_NAME"
+  - echo "$TRAVIS_TAG"
+  
   - bash <(curl -s https://codecov.io/bash) -t 646448aa-c2cb-43f5-8214-da5d0ef8118f
