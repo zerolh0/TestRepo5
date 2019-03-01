@@ -15,6 +15,7 @@ phases:
       #- codecov --token=646448aa-c2cb-43f5-8214-da5d0ef8118f
       #- cat coverage.xml
       #- bash <(curl -s https://codecov.io/bash)
-      - curl -s https://codecov.io/bash > codecovbash.sh
-      - chmod +x codecovbash.sh
-      - ./codecovbash.sh
+      - bash -c "bash <(curl -s https://codecov.io/bash)"
+      #- curl -s https://codecov.io/bash > codecovbash.sh
+      #- chmod +x codecovbash.sh
+      #- ./codecovbash.sh
